@@ -15,8 +15,12 @@
 		<h:form>
 			<h:commandLink action="view-cart?faces-redirect=true"
 				value="Your cart: " />
-			<h:outputText
-				value="#{cart.totalQuantity} items; $#{cart.totalPrice} in total" />
+			<h:outputText value="#{cart.totalQuantity} items;" />
+			<h:outputText value="#{cart.totalPrice}">
+				<f:convertNumber currencyCode="USD" type="currency" />
+			</h:outputText>
+			<h:outputText value=" in total" />
+
 		</h:form>
 		<br />
 	</ui:insert>
